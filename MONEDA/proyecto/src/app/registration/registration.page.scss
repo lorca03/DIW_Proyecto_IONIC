@@ -1,0 +1,30 @@
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+.Contenedorlogo {
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formRegistro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //width: fit-content;
+}
+
+ion-button {
+    background-color: var(--ion-color-azuloscuro);
+    border-radius: 15px;
+}
+
+input {
+    background-color: lightgray;
+    color: #0d4c92;
+    padding: 12px;
+    border: 0px;
+    border-radius: 15px;
+}

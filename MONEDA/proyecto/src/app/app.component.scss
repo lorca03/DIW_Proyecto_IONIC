@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+$azuloscuro: #0d4c92;
+$azulclaro:#59c1bd;
+$verdeoscuro:#a0e4cb;
+$verdeclaro:#cff5e7;
+ion-title {
+    color: $azuloscuro;
+    font-size: 30px;
+    font-family: 'Rubik', sans-serif;
+}

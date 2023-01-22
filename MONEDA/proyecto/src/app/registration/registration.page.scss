@@ -1,30 +1,62 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 * {
-    font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 .Contenedorlogo {
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .formRegistro {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  .boton {
     display: flex;
-    justify-content: center;
     align-items: center;
-    //width: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    ion-label {
+      font-size: 12px;
+      color: gray;
+      a {
+        text-decoration: none;
+        color: var(--ion-color-azulclaro);
+      }
+    }
+  }
 }
 
 ion-button {
-    background-color: var(--ion-color-azuloscuro);
-    border-radius: 15px;
+  background-color: var(--ion-color-azuloscuro);
+  border-radius: 15px;
+  width: 160px;
+  height: 55px;
 }
 
 input {
-    background-color: lightgray;
-    color: #0d4c92;
-    padding: 12px;
-    border: 0px;
-    border-radius: 15px;
+  background-color: lightgray;
+  color: gray;
+  padding: 12px;
+  border: 0px;
+  border-radius: 15px;
+  margin-bottom: 8px;
+  
 }
+input:focus {
+    border:2px solid var(--ion-color-azuloscuro);
+    outline: 0 none;
+  }
+input::-webkit-input-placeholder {
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+  }

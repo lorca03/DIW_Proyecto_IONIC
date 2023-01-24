@@ -40,10 +40,18 @@
 }
 
 ion-button {
-  background-color: var(--ion-color-azuloscuro);
-  border-radius: 15px;
-  width: 160px;
-  height: 55px;
+  --background: var(--ion-color-azuloscuro);
+  --background-hover: var(--ion-color-azuloscuro);
+  --background-activated: var(--ion-color-azuloscuro);
+  --background-focused: var(--ion-color-azuloscuro);
+
+  --color: white;
+
+  --border-radius: 15px;
+
+
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 }
 
 input {

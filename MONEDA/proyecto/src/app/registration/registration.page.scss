@@ -36,9 +36,9 @@ ion-button {
   --background-hover: var(--ion-color-azuloscuro);
   --background-activated: var(--ion-color-azuloscuro);
   --background-focused: var(--ion-color-azuloscuro);
-
+    font-family: 'Quicksand', sans-serif;
   --color: white;
-
+  text-transform: capitalize;
   --border-radius: 15px;
 
   width: 140px;

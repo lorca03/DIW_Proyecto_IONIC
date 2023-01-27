@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 22px;
+    box-shadow: 0px 23px 31px -13px var(--ion-color-azuloscuro);
+    background-color: var(--ion-color-azuloscuro);
+    width: 200px;
+    height: 70px;
+    border-radius: 30px;
+    ion-col {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: white;
+
+        ion-icon {
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        img {
+            width: 26px;
+        }
+    }
+}

@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TransaccionPageRoutingModule } from './transaccion-routing.module';
+import { TransaccionPageRoutingModule } from './eleccionTransaccion-routing.module';
 
-import { TransaccionPage } from './transaccion.page';
+import { EleccionTransaccionPage } from './eleccionTransaccion.page';
+import { AtrasComponent } from '../mycomponents/atras/atras.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { TransaccionPage } from './transaccion.page';
     IonicModule,
     TransaccionPageRoutingModule
   ],
-  declarations: [TransaccionPage]
+  declarations: [EleccionTransaccionPage,AtrasComponent]
 })
 export class TransaccionPageModule {}

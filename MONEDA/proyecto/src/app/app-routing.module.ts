@@ -18,14 +18,19 @@ const routes: Routes = [
   {
     path: 'registration',
     loadChildren: () => import('./registration/registration.module').then( m => m.RegistrationPageModule)
-  },  {
+  },
+  {
     path: 'settings',
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   },
   {
+    path: 'eleccionTransaccion',
+    loadChildren: () => import('./eleccionTransaccion/eleccionTransaccion.module').then( m => m.TransaccionPageModule)
+  },  {
     path: 'transaccion',
     loadChildren: () => import('./transaccion/transaccion.module').then( m => m.TransaccionPageModule)
   },
+
 
 ];
 

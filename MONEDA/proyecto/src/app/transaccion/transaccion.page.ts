@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransaccionPage implements OnInit {
 
+  public atras: string = 'eleccionTransaccion';
   constructor() { }
 
   ngOnInit() {

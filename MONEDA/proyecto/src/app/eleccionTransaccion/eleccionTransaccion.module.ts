@@ -7,15 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { TransaccionPageRoutingModule } from './eleccionTransaccion-routing.module';
 
 import { EleccionTransaccionPage } from './eleccionTransaccion.page';
-import { AtrasComponent } from '../mycomponents/atras/atras.component';
+import { AtrasModule } from '../modulosReutilizables/atrasModule/atras.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TransaccionPageRoutingModule
+    TransaccionPageRoutingModule,
+    AtrasModule
   ],
-  declarations: [EleccionTransaccionPage,AtrasComponent]
+  declarations: [EleccionTransaccionPage]
 })
 export class TransaccionPageModule {}

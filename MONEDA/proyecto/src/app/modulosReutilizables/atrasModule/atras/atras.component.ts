@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AtrasComponent implements OnInit {
 
-  @Input () destino: string='';
+  @Input () destino: string="";
   constructor() { }
 
   ngOnInit() {

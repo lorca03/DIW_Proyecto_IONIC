@@ -10,12 +10,12 @@ export class TransaccionPage implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  public numero = '';
+  public numero = '0';
   onClick(event: any) {
     const dinero = document.getElementById('dinero');
     if (event.target.outerText != '') {
       if (this.numero == '0') {
-        this.numero=event.target.outerText;
+        this.numero= event.target.outerText=='00'?'0':event.target.outerText;
       } else {
         this.numero += event.target.outerText;
       }

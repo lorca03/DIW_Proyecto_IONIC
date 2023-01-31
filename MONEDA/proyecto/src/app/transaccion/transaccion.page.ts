@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-transaccion',
@@ -6,11 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaccion.page.scss'],
 })
 export class TransaccionPage implements OnInit {
-
   public atras: string = 'eleccionTransaccion';
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  public numero = '';
+  onClick(event: any) {
+    const dinero = document.getElementById('dinero');
+    if (event.target.outerText != '') {
+      if (this.numero == '0') {
+        this.numero=event.target.outerText;
+      } else {
+        this.numero += event.target.outerText;
+      }
+    } else {
+      this.numero = '0';
+    }
+    if (dinero != null) {
+      dinero.textContent = this.numero;
+    }
   }
-
 }

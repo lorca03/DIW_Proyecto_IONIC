@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SettingsPageRoutingModule } from './settings-routing.module';
+import { StatsPageRoutingModule } from './stats-routing.module';
 
-import { SettingsPage } from './settings.page';
+import { StatsPage } from './stats.page';
 import { AtrasModule } from '../modulosReutilizables/atrasModule/atras.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { AtrasModule } from '../modulosReutilizables/atrasModule/atras.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    SettingsPageRoutingModule,
+    StatsPageRoutingModule,
     AtrasModule
   ],
-  declarations: [SettingsPage]
+  declarations: [StatsPage]
 })
-export class SettingsPageModule {}
+export class StatsPageModule {}

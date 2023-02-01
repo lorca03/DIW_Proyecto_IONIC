@@ -1,0 +1,29 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    flex-direction: column;
+
+    .markets {
+        color: var(--ion-color-azuloscuro);
+        font-family: "Rubik", sans-serif;
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+
+    .mercado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        width: 250px;
+        height: 60px;
+        border-radius: 15px;
+        .siglas {
+            color: var(--ion-color-azuloscuro);
+        }
+
+        background-color: var(--ion-color-verdeclaro);
+    }
+}

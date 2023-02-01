@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MercadosService } from '../services/mercados.service';
 
 @Component({
   selector: 'app-stats',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class StatsPage implements OnInit {
 
   public atras:string='home'
-  constructor() { }
+  constructor(private mercadosService:MercadosService) {
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
+   this.mercadosService.mercados()
+    console.log('fdg');
+    
   }
 
 }

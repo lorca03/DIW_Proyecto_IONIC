@@ -1,29 +1,73 @@
 .contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+  flex-direction: column;
+
+  .markets {
+    color: var(--ion-color-azuloscuro);
+    font-family: "Rubik", sans-serif;
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+
+  .mercado {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
-    flex-direction: column;
-
-    .markets {
-        color: var(--ion-color-azuloscuro);
-        font-family: "Rubik", sans-serif;
-        font-size: 35px;
-        margin-bottom: 25px;
-    }
-
-    .mercado {
+    margin-top: 12px;
+    width: 280px;
+    height: 85px;
+    border-radius: 15px;
+    font-family: "Quicksand", sans-serif;
+    background-color: var(--ion-color-verdeclaro);
+    .i-imagen,
+    .i-izquierda{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .imagen {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 10px;
-        width: 250px;
-        height: 60px;
-        border-radius: 15px;
-        .siglas {
-            color: var(--ion-color-azuloscuro);
+        border-radius: 10px;
+        width: 64px;
+        height: 64px;
+        background-color: var(--ion-color-verdeoscuro);
+        img {
+          width: 45px;
         }
-
-        background-color: var(--ion-color-verdeclaro);
+      }
+      .izquierda {
+        text-align: end;
+        color: var(--ion-color-azuloscuro);
+        font-size: 20px;
+        font-weight: 600;
+        .indice {
+        font-size: 14px;
+          background-color: #00cb6a;
+          padding: 4px;
+          border-radius: 10px;
+          color: white;
+          display: flex;
+          align-items: center;
+        }
+      }
     }
+    .i-id {
+        display: flex;
+        align-items: center;
+        .id {
+          display: flex;
+          flex-direction: column;
+          color: var(--ion-color-azulclaro);
+          .siglas {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--ion-color-azuloscuro);
+          }
+        }
+      }
+  }
 }

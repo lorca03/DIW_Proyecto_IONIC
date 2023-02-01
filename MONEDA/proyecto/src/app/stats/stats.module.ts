@@ -8,6 +8,7 @@ import { StatsPageRoutingModule } from './stats-routing.module';
 
 import { StatsPage } from './stats.page';
 import { AtrasModule } from '../modulosReutilizables/atrasModule/atras.module';
+import { MercadosService } from '../services/mercados.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { AtrasModule } from '../modulosReutilizables/atrasModule/atras.module';
     StatsPageRoutingModule,
     AtrasModule
   ],
-  declarations: [StatsPage]
+  declarations: [StatsPage],
+  providers:[MercadosService]
 })
 export class StatsPageModule {}

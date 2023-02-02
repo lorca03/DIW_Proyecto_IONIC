@@ -1,26 +1,26 @@
 <ion-content>
   <app-atras [destino]="atras"></app-atras>
   <div class="contenedor">
-    <label class="markets">Markets</label>
-    <div class="mercado">
+    <label class="markets">Exchange rates</label>
+    <div class="mercado" *ngFor="let moneda of monedasmostrar;index as i">
       <ion-grid fixed>
         <ion-row>
           <ion-col size="4" class="i-imagen">
             <div class="imagen">
-              <img src="../../assets/imgs/paises/españa.jpg"/></div>
+              <img src="../../assets/imgs/paises/{{fotos[i]}}"/></div>
             </ion-col>
-          <ion-col size="4" class="i-id">
+          <ion-col size="5" class="i-id">
             <div class="id">
-              <label class="siglas">IBEX 35</label>
-              <label>España</label>
+              <label class="siglas">{{moneda}}</label>
+              <label>{{nombresmonedas[i]}}</label>
             </div></ion-col>
-          <ion-col size="4" class="i-izquierda">
+          <ion-col size="3" class="i-izquierda">
             <div class="izquierda">
-              <label>1000€</label>
-              <div class="indice">
+              <label>{{precios[i]}}</label>
+              <!-- <div class="indice">
                 <ion-icon slot="start" name="arrow-up-outline"></ion-icon>
                 <label>15.3%</label>
-              </div>
+              </div> -->
             </div></ion-col>
         </ion-row>
       </ion-grid>

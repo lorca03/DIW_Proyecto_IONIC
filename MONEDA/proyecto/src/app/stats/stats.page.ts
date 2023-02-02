@@ -9,8 +9,8 @@ import { MercadosService } from '../services/mercados.service';
 export class StatsPage implements OnInit {
   public atras: string = 'home';
   public monedasmostrar: string[] = ['USD', 'JPY', 'GBP', 'CHF', 'AUD'];
-  public fotos: string[] = ['america.png', 'china.PNG', 'GBP', 'CHF', 'AUD'];
-  public precios: string[] = [];
+  public fotos: string[] = ['america.png', 'china.PNG', 'gbp.png', 'sw.png', 'aus.png'];
+  public precios: any[] = [];
   public nombresmonedas:string[]=[]
   constructor(private mercadosService: MercadosService) {}
 
@@ -18,14 +18,12 @@ export class StatsPage implements OnInit {
     this.idmonedas()
     this.monedasmostrar.forEach(element => {
       this.latest(element)
-    });
-    console.log(this.precios);
-    
+    }); 
   }
   latest(element:any){
      this.mercadosService.divisia(element).subscribe(
       (resp:any)=>{
-        this.precios.push(resp.rates);
+        this.precios.push(Object.values(resp.rates)[0]);
     })
   }
   idmonedas(){

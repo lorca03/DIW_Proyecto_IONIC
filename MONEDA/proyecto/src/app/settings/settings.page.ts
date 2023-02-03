@@ -10,30 +10,18 @@ import { OverlayEventDetail } from '@ionic/core/components';
 export class SettingsPage implements OnInit {
 
   public atras:string='home'
+  public settings:string[]=['Last name','Password','Email','Phone']
 
   @ViewChild(IonModal) modal: IonModal | undefined;
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
 
-
   message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
   apellidos: string='';
-
-  cancel() {
-    this.modal?.dismiss(null, 'cancel');
-  }
-
-  confirm() {
-    this.modal?.dismiss(this.apellidos, 'confirm');
-  }
-
-  onWillDismiss(event: Event) {
-    const ev = event as CustomEvent<OverlayEventDetail<string>>;
-    if (ev.detail.role === 'confirm') {
-      this.message = `Hello, ${ev.detail.data}!`;
-    }
-  }
+  password: string='';
+  email: string='';
+  phone: string='';
 }
 

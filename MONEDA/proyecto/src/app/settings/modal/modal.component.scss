@@ -1,0 +1,13 @@
+.setting {
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    .botonModal {
+        background: transparent;
+        color: var(--ion-color-azuloscuro);
+        font-size: 25px;
+        margin-bottom: 16px;
+    }
+}

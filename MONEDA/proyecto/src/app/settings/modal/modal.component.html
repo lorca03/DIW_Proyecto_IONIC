@@ -1,0 +1,34 @@
+<div class="setting">
+  <button class="botonModal" id="open-modal{{setting}}" expand="block">
+    {{ setting }}
+  </button>
+  <ion-icon slot="icon-only" name="chevron-down-outline"></ion-icon>
+</div>
+
+<p>{{variable}}</p>
+<ion-modal trigger="open-modal{{setting}}" (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true"
+            >Confirm</ion-button
+          >
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item>
+        <ion-label position="stacked">Enter your {{setting}}</ion-label>
+        <ion-input
+          type="text"
+          placeholder="Your {{setting}}"
+          [(ngModel)]="variable"
+        ></ion-input>
+      </ion-item>
+    </ion-content>
+  </ng-template>
+</ion-modal>

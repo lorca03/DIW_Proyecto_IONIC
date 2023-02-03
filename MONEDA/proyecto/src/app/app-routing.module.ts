@@ -26,8 +26,9 @@ const routes: Routes = [
   {
     path: 'eleccionTransaccion',
     loadChildren: () => import('./eleccionTransaccion/eleccionTransaccion.module').then( m => m.TransaccionPageModule)
-  },  {
-    path: 'transaccion',
+  },
+  {
+    path: 'transaccion/:eleccion',
     loadChildren: () => import('./transaccion/transaccion.module').then( m => m.TransaccionPageModule)
   },
   {

@@ -1,0 +1,42 @@
+
+.contenedorImagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    flex-direction: column;
+img{
+    border: 2px solid var(--ion-color-azuloscuro);
+    width: 80px;
+    height: 75px;
+    border-radius: 100%;
+}
+label{
+    margin-top: 10px;
+    font-size: 20px;
+    color: var(--ion-color-azuloscuro);
+    font-family: "Rubik", sans-serif;
+    // font-family: "Quicksand", sans-serif;
+}
+button{
+    margin-left: 5px;
+    background: transparent;
+}
+ion-icon{
+    color: var(--ion-color-azuloscuro);
+}
+}
+.contenedorsettings{
+    margin-top: 40px;
+    color: var(--ion-color-azuloscuro);
+    font-family: "Quicksand", sans-serif;
+    .settings{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .botonModal{
+        background: transparent;
+        color: var(--ion-color-azuloscuro);
+    }
+}

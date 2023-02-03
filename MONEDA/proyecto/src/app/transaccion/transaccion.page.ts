@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-transaccion',
@@ -6,11 +7,14 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./transaccion.page.scss'],
 })
 export class TransaccionPage implements OnInit {
+  
   public atras: string = 'eleccionTransaccion';
-  constructor() {}
-
-  ngOnInit() {}
   public numero = '0';
+  public eleccion:{eleccion:string}=this.rutaActiva.snapshot.params['eleccion']
+  constructor(private rutaActiva:ActivatedRoute) {}
+  
+  ngOnInit() { }
+  
   onClick(event: any) {
     const dinero = document.getElementById('dinero');
     if (event.target.outerText != '') {

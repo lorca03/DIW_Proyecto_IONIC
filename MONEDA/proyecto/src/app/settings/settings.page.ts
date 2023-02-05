@@ -8,20 +8,14 @@ import { OverlayEventDetail } from '@ionic/core/components';
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
-
-  public atras:string='home'
-  public settings:string[]=['Last name','Password','Email','Phone']
+  public atras: string = 'home';
+  public settings: string[] = ['Last name', 'Password', 'Email', 'Phone'];
 
   @ViewChild(IonModal) modal: IonModal | undefined;
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  logout() {
+    console.log('fuera');
   }
-
-  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
-  apellidos: string='';
-  password: string='';
-  email: string='';
-  phone: string='';
 }
-

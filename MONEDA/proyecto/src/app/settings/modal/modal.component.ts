@@ -25,7 +25,7 @@ export class ModalComponent implements OnInit,OnDestroy {
     this.modal?.dismiss(null, 'cancel');
   }
   confirm() {
-    this.modal?.dismiss(this.setting, 'confirm');
+    this.modal?.dismiss(this.variable, 'confirm');
   }
   onWillDismiss(event: Event) {
     const ev = event as CustomEvent<OverlayEventDetail<string>>;

@@ -10,9 +10,14 @@
     </div>
   </div>
   <div class="contenedorsettings">
-    <app-modal setting="Last name"></app-modal>
-    <app-modal setting="Password"></app-modal>
-    <app-modal setting="Email"></app-modal>
-    <app-modal setting="Phone"></app-modal>
+    <app-modal setting="{{ajuste}}" *ngFor="let ajuste of settings"></app-modal>
   </div>
+  <div class="logut">
+    <div class="boton" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </div>
+    <label>Log out</label>
+  </div>
+  
+
 </ion-content>

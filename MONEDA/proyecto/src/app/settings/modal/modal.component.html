@@ -1,11 +1,11 @@
 <div class="setting">
   <button class="botonModal" id="open-modal{{setting}}" expand="block">
-    {{ setting }}
+    <label>{{ setting }}</label> 
+    <ion-icon slot="icon-only" name="chevron-down-outline"></ion-icon>
   </button>
-  <ion-icon slot="icon-only" name="chevron-down-outline"></ion-icon>
 </div>
 
-<p>{{variable}}</p>
+<!-- <p>{{variable}}</p> -->
 <ion-modal trigger="open-modal{{setting}}" (willDismiss)="onWillDismiss($event)">
   <ng-template>
     <ion-header>
@@ -13,6 +13,7 @@
         <ion-buttons slot="start">
           <ion-button (click)="cancel()">Cancel</ion-button>
         </ion-buttons>
+        <ion-title>{{setting}}</ion-title>
         <ion-buttons slot="end">
           <ion-button (click)="confirm()" [strong]="true"
             >Confirm</ion-button

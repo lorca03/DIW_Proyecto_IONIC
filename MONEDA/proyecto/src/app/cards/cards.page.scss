@@ -1,0 +1,72 @@
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 550px;
+  .containercard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  label {
+    color: var(--ion-color-azuloscuro);
+    font-family: "Rubik", sans-serif;
+    font-size: 35px;
+    margin-top: 15px;
+    margin-bottom: 38px;
+  }
+  .card {
+    margin-bottom: 13px;
+    border: 1px solid var(--ion-color-azuloscuro);
+    border-radius: 15px;
+    width: 240px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ion-grid {
+        width: 100%;
+        ion-col {
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--ion-color-azuloscuro);
+          font-family: "Quicksand", sans-serif;
+          img {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+  .logut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .boton {
+      border: 1px solid var(--ion-color-azuloscuro);
+      border-radius: 100%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--ion-color-azulclaro);
+      font-size: 25px;
+    }
+    label {
+      font-size: 22px;
+      font-weight: 600;
+      font-family: "Rubik", sans-serif;
+      color: var(--ion-color-azuloscuro);
+    }
+  }
+}

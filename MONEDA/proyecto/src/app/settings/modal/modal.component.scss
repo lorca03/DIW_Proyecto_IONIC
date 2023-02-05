@@ -1,13 +1,38 @@
 .setting {
     width: 270px;
     display: flex;
-    justify-content: space-between;
     align-content: center;
-
+    justify-content: space-between;
+    margin-bottom: 25px;
     .botonModal {
         background: transparent;
         color: var(--ion-color-azuloscuro);
         font-size: 25px;
-        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
     }
+}
+ion-modal{
+    ion-button{
+        --color: var(--ion-color-azuloscuro);
+        font-family: "Rubik", sans-serif;
+    }
+    ion-title{
+        text-align: center;
+        font-family: "Rubik", sans-serif;
+        color: var(--ion-color-azulclaro); 
+    }
+    ion-content{
+        ion-label{
+            color: var(--ion-color-verdeoscuro);
+            font-family: "Quicksand", sans-serif;
+        }
+        ion-input{
+            font-family: "Rubik", sans-serif;
+            color: var(--ion-color-azuloscuro);
+        }
+    }
+    
 }

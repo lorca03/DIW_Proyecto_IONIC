@@ -2,7 +2,16 @@
   <app-atras [destino]="atras"></app-atras>
   <div class="header">
     <label>Card details</label>
-    <div class="img"></div>
+    <img src="../../assets/imgs/tarjetaDetalle.PNG" alt="">
   </div>
-  <h1>{{card}}</h1>
+  <h1></h1>
+  <div class="container">
+    <ion-grid>
+      <ion-row *ngFor="let detalle of detalles;let indice=index">
+        <ion-col size="4">{{detalle}}</ion-col>
+        <ion-col size="8">{{detallesCard[indice]}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="boton"><button>Delete Card</button></div>
 </ion-content>

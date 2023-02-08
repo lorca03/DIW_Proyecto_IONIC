@@ -1,0 +1,40 @@
+.header {
+    color: var(--ion-color-azuloscuro);
+    font-family: "Rubik", sans-serif;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 35px;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .addForm {
+        margin-bottom: 16px;
+        border: 2px solid var(--ion-color-azuloscuro);
+        width: 245px;
+        display: flex;
+        border-radius: 30px;
+        padding-left: 15px;
+        height: 65px;
+        font-size: 18px;
+        ion-input{
+            font-family: "Quicksand", sans-serif;
+            color: var(--ion-color-azulclaro);
+        }
+    }
+    button{
+        font-family: "Quicksand", sans-serif;
+        background-color: var(--ion-color-azuloscuro);
+        border-radius: 15px;
+        font-size: 22px;
+        height: 65px;
+        color: white;
+        width: 160px;
+        margin-top: 5px;
+    }
+}

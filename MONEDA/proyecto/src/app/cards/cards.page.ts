@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CardsPage implements OnInit {
 
   public atras='home'
+  public cards=['Special card','Jose']
   constructor() { }
 
   ngOnInit() {

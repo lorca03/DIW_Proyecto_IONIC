@@ -34,10 +34,20 @@ const routes: Routes = [
   {
     path: 'stats',
     loadChildren: () => import('./stats/stats.module').then( m => m.StatsPageModule)
-  },  {
+  },
+  {
     path: 'cards',
     loadChildren: () => import('./cards/cards.module').then( m => m.CardsPageModule)
   },
+  {
+    path: 'addcard',
+    loadChildren: () => import('./addcard/addcard.module').then( m => m.AddcardPageModule)
+  },
+  {
+    path: 'datallecard/:card',
+    loadChildren: () => import('./datallecard/datallecard.module').then( m => m.DatallecardPageModule)
+  },
+
 
 
 

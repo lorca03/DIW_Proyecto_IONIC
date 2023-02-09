@@ -8,10 +8,10 @@ import { MercadosService } from '../services/mercados.service';
 })
 export class StatsPage implements OnInit {
   public atras: string = 'home';
-  public monedasmostrar: string[] = ['USD', 'JPY', 'GBP', 'CHF', 'AUD'];
+  public monedasmostrar: string[] = ['USD', 'HKD', 'GBP', 'CHF', 'AUD'];
   public fotos: string[] = [
     'america.png',
-    'china.PNG',
+    'hk.png',
     'gbp.png',
     'sw.png',
     'aus.png',
@@ -28,7 +28,7 @@ export class StatsPage implements OnInit {
           case 'USD':
             this.precios[0] = Object.values(resp.rates)[0];
             break;
-          case 'JPY':
+          case 'HKD':
             this.precios[1] = Object.values(resp.rates)[0];
             break;
           case 'GBP':

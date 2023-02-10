@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationPage implements OnInit {
 
-  constructor() { }
+  user: FormGroup;
+  constructor(
+    private UserService:UserService,
+    private routes:Router
+    ) {
+    this.user=new FormGroup({
+      email:new FormControl('',Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")),
+      password:new FormControl('',Validators.minLength(8))
+    })
+   }
 
   ngOnInit() {
   }
 
+  onSubmit(){
+    this.UserService.register(this.user.value)
+    .then(response=>{
+      console.log(response);
+      this.routes.navigate(['/login'])
+    })
+    .catch(error=>console.log(error));
+  }
 }

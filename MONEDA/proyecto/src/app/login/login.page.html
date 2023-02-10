@@ -7,14 +7,14 @@
   </div>
 
   <div class="formRegistro">
-    <form>
+    <form [formGroup]="user" (submit)="onSubmit()">
       <ion-grid>
         <ion-row>
-          <ion-col size="12"><input type="email" required placeholder="&#xf0e0;   Email"></ion-col>
+          <ion-col size="12"><input formControlName="email" type="email" required placeholder="&#xf0e0;   Email"></ion-col>
         </ion-row>
         <ion-row>
           <ion-col size="12">
-             <input type="password" required placeholder="&#xf084;   Password"> 
+             <input formControlName="password" type="password" required placeholder="&#xf084;   Password"> 
           </ion-col>
         </ion-row>
       </ion-grid>

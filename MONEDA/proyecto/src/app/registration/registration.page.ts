@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { CrudService } from '../services/crud.service';
+import User from '../interfaces/user.interface';
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +15,8 @@ export class RegistrationPage implements OnInit {
   user: FormGroup;
   constructor(
     private UserService:UserService,
-    private routes:Router
+    private routes:Router,
+    private crud:CrudService
     ) {
     this.user=new FormGroup({
       email:new FormControl('',Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")),
@@ -24,11 +27,12 @@ export class RegistrationPage implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
+ async onSubmit(){
+  // await this.user.controls['email']['value']
     this.UserService.register(this.user.value)
     .then(response=>{
       console.log(response);
-      this.routes.navigate(['/login'])
+      this.routes.navigate(['/home'])
     })
     .catch(error=>console.log(error));
   }

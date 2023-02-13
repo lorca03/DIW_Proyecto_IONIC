@@ -3,10 +3,14 @@
   <div class="header">
     <label>Add Card</label>
   </div>
-  <div class="content">
+  <form class="content" [formGroup]="card" (submit)="onSubmit()">
     <div class="addForm" *ngFor="let add of adds">
-      <ion-input placeholder="{{add}}"></ion-input>
+      <ion-input
+        placeholder="{{add | uppercase}}"
+        required
+        formControlName="{{add}}"
+      ></ion-input>
     </div>
-    <button> Add </button>
-  </div>
+    <button [disabled]="card.invalid" type="submit">Add</button>
+  </form>
 </ion-content>

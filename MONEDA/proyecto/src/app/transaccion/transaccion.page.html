@@ -2,9 +2,9 @@
   <app-atras [destino]="atras"></app-atras>
   <div class="foto"><ion-icon name="add-circle-outline"></ion-icon></div>
   <div class="container">
-    <label class="dinero"><span id="dinero">0</span>€</label>
+    <label class="dinero"><span id="dinero">{{numero}}</span>€</label>
     <select name="banco" class="banco">
-      <option value="BBVA" >BBVA</option>
+      <option *ngFor="let card of cards" value="{{card['name']}}" >{{card['name']}}</option>
     </select>
     <div class="numeros">
       <ion-grid fixed>
@@ -32,7 +32,7 @@
         </ion-row>
       </ion-grid>
     </div>
-    <ion-button expand="block" class="boton" fill="clear" shape="round">
+    <ion-button (click)="transaccion()" expand="block" class="boton" fill="clear" shape="round">
       {{eleccion}}
     </ion-button>
   </div>

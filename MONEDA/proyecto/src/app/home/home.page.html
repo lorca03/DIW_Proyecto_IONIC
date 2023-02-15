@@ -15,9 +15,9 @@
           <ion-col class="headers" size="6">Balance</ion-col>
           <ion-col class="headers" size="6">Card</ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col class="balance" size="6">1.200€</ion-col>
-          <ion-col class="balance" size="6">BBVA</ion-col>
+        <ion-row *ngIf="cards.length>0">
+          <ion-col class="balance" size="6">{{cards[0]['balance']}}€</ion-col>
+          <ion-col class="balance" size="6">{{cards[0]['name']}}</ion-col>
         </ion-row>
       </ion-grid>
     </div>

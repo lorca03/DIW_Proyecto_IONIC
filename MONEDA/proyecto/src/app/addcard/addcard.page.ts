@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CrudService } from '../services/crud.service';
+import Card from '../interfaces/card.interface';
+import { Auth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-addcard',
@@ -13,7 +16,8 @@ export class AddcardPage implements OnInit {
   public adds=['name','bank','account','status','valid']
   card: FormGroup;
   constructor(
-    private crud :CrudService
+    private crud :CrudService,
+    private routes:Router
   ) {
     this.card=new FormGroup({
       name:new FormControl('',Validators.minLength(1)),
@@ -29,13 +33,22 @@ export class AddcardPage implements OnInit {
 
   onSubmit(){
     console.log(this.card.value);
-    
-    // this.crud.addCard(this.card.value)
-    // .then(response=>{
-    //   console.log(response);
-    //   //this.routes.navigate(['/home'])
-    // })
-    // .catch(error=>console.log(error));
+    const newcard:Card={
+      name:this.card.value['name'],
+      bank:this.card.value['bank'],
+      account:this.card.value['account'],
+      status:this.card.value['status'],
+      valid:this.card.value['valid'],
+      balance:0,
+      transactions:[],
+      email: Auth.auth().currentUser.email
+    }
+    this.crud.addCard(newcard)
+    .then(response=>{
+      console.log(response);
+      this.routes.navigate(['/cards'])
+    })
+    .catch(error=>console.log(error));
   }
 
 }

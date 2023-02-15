@@ -11,13 +11,14 @@ export class CardsPage implements OnInit {
 
   public atras='home'
   public cards:Card[]=[]
-  constructor(private crudService:CrudService) { }
+  constructor(private crudService:CrudService) {}
 
-  ngOnInit() {
-    this.crudService.getCards().subscribe(cards=>{
-      console.log(cards);
-      this.cards=cards;
-    })
+  async ngOnInit() {
+    (await this.crudService.getCards())
+      .subscribe(cards => {
+        console.log(cards);
+        this.cards = cards;
+      })
   }
 
   

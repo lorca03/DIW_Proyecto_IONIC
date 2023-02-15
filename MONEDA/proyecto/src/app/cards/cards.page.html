@@ -3,11 +3,11 @@
   <div class="cards">
     <div class="containercard">
       <label>Cards</label>
-      <div class="card" [routerLink]="['/datallecard/',card]" *ngFor="let card of cards">
+      <div class="card" [routerLink]="['/datallecard/',card['name']]" *ngFor="let card of cards">
         <div class="container">
           <ion-grid>
             <ion-row>
-              <ion-col>{{card}}</ion-col>
+              <ion-col>{{card['name']}}</ion-col>
               <ion-col><img src="../../assets/imgs/minicard.PNG" alt="No hay inmagen"></ion-col>
             </ion-row>
           </ion-grid>

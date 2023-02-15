@@ -16,4 +16,10 @@ export class UserService {
   logout() {
     return signOut(this.auth)
   }
+  emailAuth(){
+    if (this.auth.currentUser!==null) {
+      return this.auth.currentUser.email
+    }
+    return ''
+  }
 }

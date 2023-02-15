@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CrudService } from '../services/crud.service';
 import Card from '../interfaces/card.interface';
-import { Auth } from '@angular/fire/auth';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-addcard',
@@ -17,7 +17,8 @@ export class AddcardPage implements OnInit {
   card: FormGroup;
   constructor(
     private crud :CrudService,
-    private routes:Router
+    private routes:Router,
+    private userService: UserService
   ) {
     this.card=new FormGroup({
       name:new FormControl('',Validators.minLength(1)),
@@ -32,7 +33,6 @@ export class AddcardPage implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.card.value);
     const newcard:Card={
       name:this.card.value['name'],
       bank:this.card.value['bank'],
@@ -41,11 +41,10 @@ export class AddcardPage implements OnInit {
       valid:this.card.value['valid'],
       balance:0,
       transactions:[],
-      email: Auth.auth().currentUser.email
+      email:this.userService.emailAuth()!
     }
     this.crud.addCard(newcard)
     .then(response=>{
-      console.log(response);
       this.routes.navigate(['/cards'])
     })
     .catch(error=>console.log(error));

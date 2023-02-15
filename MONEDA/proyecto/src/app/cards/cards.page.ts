@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Card from '../interfaces/card.interface';
 import { CrudService } from '../services/crud.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-cards',
@@ -11,13 +12,18 @@ export class CardsPage implements OnInit {
 
   public atras='home'
   public cards:Card[]=[]
-  constructor(private crudService:CrudService) {}
+  constructor(private crudService:CrudService,
+    private userService: UserService) {}
 
   async ngOnInit() {
     (await this.crudService.getCards())
       .subscribe(cards => {
-        console.log(cards);
-        this.cards = cards;
+        this.cards=[];
+        cards.forEach(element => {
+           if (element['email']===this.userService.emailAuth()) {
+            this.cards.push(element)
+           }
+        });
       })
   }
 

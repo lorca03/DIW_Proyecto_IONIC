@@ -32,7 +32,7 @@
         </ion-row>
       </ion-grid>
     </div>
-    <ion-button (click)="transaccion()" expand="block" class="boton" fill="clear" shape="round">
+    <ion-button (click)="transaccion()" [disabled]="cards.length<1" expand="block" class="boton" fill="clear" shape="round">
       {{eleccion}}
     </ion-button>
   </div>

@@ -6,11 +6,10 @@ import {
   setDoc,
   doc,
   collectionData,
-deleteDoc} from '@angular/fire/firestore';
-import User from '../interfaces/user.interface';
+deleteDoc,
+updateDoc} from '@angular/fire/firestore';
 import Card from '../interfaces/card.interface';
 import { Observable } from 'rxjs';
-import { query, getDocs, where } from 'firebase/firestore';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -31,6 +30,10 @@ export class CrudService {
   deleteCard (card:Card) {
     const cardsRef= doc(this.firestore,`cards/${card.name}.${card.email}`)
     return deleteDoc(cardsRef)
+  }
+  async transaccion(transaccion:number,tarjeta:string){
+    const cardsRef= doc(this.firestore,`cards/${tarjeta}.${this.userService.emailAuth()}`)
+    return await updateDoc(cardsRef,{balance:transaccion});
   }
 
   // para settings despues

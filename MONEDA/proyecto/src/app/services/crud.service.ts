@@ -28,12 +28,13 @@ export class CrudService {
     return collectionData(cardsRef) as Observable<Card[]>
   }
   deleteCard (card:Card) {
+    localStorage.removeItem('cardSelec')
     const cardsRef= doc(this.firestore,`cards/${card.name}.${card.email}`)
     return deleteDoc(cardsRef)
   }
-  async transaccion(transaccion:number,tarjeta:string){
+  async transaccion(transaccion:number,tarjeta:string,transacciones:number[]){
     const cardsRef= doc(this.firestore,`cards/${tarjeta}.${this.userService.emailAuth()}`)
-    return await updateDoc(cardsRef,{balance:transaccion});
+    return await updateDoc(cardsRef,{balance:transaccion,transactions:transacciones});
   }
 
   // para settings despues

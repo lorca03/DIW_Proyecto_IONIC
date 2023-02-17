@@ -8,7 +8,7 @@
       <a href="settings"></a>
     </div>
   </div>
-  <div class="contenedorTarjeta">
+  <div class="contenedorTarjeta" (click)="presentAlert()">
     <div class="tarjeta">
       <ion-grid>
         <ion-row>
@@ -16,54 +16,12 @@
           <ion-col class="headers" size="6">Card</ion-col>
         </ion-row>
         <ion-row *ngIf="cards.length>0">
-          <ion-col class="balance" size="6">{{cards[0]['balance']}}€</ion-col>
-          <ion-col class="balance" size="6">{{cards[0]['name']}}</ion-col>
+          <ion-col class="balance" size="6">{{cards[cardSelec]['balance']}}€</ion-col>
+          <ion-col class="balance" size="6">{{cards[cardSelec]['name']}}</ion-col>
         </ion-row>
       </ion-grid>
     </div>
   </div>
-  <div class="transacciones">
-    <section class="titulo">
-      <span>Last transactions</span>
-    </section>
-    <ion-grid class="transaccion">
-      <ion-row>
-        <ion-col size="3"
-          ><img src="../../assets/imgs/netflix-n-logo-png.png" alt="pepe"
-        /></ion-col>
-        <ion-col size="6">
-          <div>
-            <span>Netflix</span><br />
-            <span class="descripcion">Subscripcion mensual</span>
-          </div>
-        </ion-col>
-        <ion-col size="3" class="dinero">+100€</ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="3"
-          ><img src="../../assets/imgs/netflix-n-logo-png.png" alt="pepe"
-        /></ion-col>
-        <ion-col size="6">
-          <div>
-            <span>Netflix</span><br />
-            <span class="descripcion">Subscripcion mensual</span>
-          </div>
-        </ion-col>
-        <ion-col size="3" class="dinero">+100€</ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="3"
-          ><img src="../../assets/imgs/netflix-n-logo-png.png" alt="pepe"
-        /></ion-col>
-        <ion-col size="6">
-          <div>
-            <span>Netflix</span><br />
-            <span class="descripcion">Subscripcion mensual</span>
-          </div>
-        </ion-col>
-        <ion-col size="3" class="dinero">+100€</ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+  <app-transactions></app-transactions>
   <app-navigation></app-navigation>
 </ion-content>

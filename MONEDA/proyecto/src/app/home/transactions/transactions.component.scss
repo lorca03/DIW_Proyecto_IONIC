@@ -1,0 +1,37 @@
+.transacciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 45px;
+    .titulo {
+    font-family: "Rubik", sans-serif;
+      font-size: 20px;
+      display: flex;
+      align-items: flex-start;
+      width: 268px;
+      justify-content: flex-start;
+      span {
+        font-weight: 700;
+        color: var(--ion-color-azuloscuro);
+      }
+    }
+    .transaccion {
+      font-family: "Quicksand", sans-serif;
+      color: var(--ion-color-azuloscuro);
+      width: 280px;
+      font-size:16px ;
+      ion-col {
+        display: flex;
+        align-items: center; 
+      }
+      .dinero {
+        justify-content: end;
+      }
+      .descripcion{
+        font-size:12px ;
+        color: var(--ion-color-verdeoscuro);
+      }
+    }
+  }
+  

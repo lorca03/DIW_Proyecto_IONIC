@@ -64,7 +64,10 @@ export class TransaccionPage implements OnInit {
       ) {
         var balance: number = parseInt(element.balance + '');
         var transaccion = balance + parseInt(transac!);
-        this.crudService.transaccion(transaccion!, tarjetaSelec);
+        var transacciones=element['transactions'];
+        transacciones.push(transac);
+        console.log(transacciones);
+        this.crudService.transaccion(transaccion!, tarjetaSelec,transacciones);
         this.routes.navigate(['/home']);
       }
     });

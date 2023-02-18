@@ -47,9 +47,10 @@ export class HomePage {
     if (data != undefined) {
       localStorage.setItem('cardSelec', data);
       this.ngOnInit();
+      
     }
   }
-  async presentAlert() {
+  async presentAlert(transac:any) {
     var alert = await this.alertController.create({
       header: 'Select your card',
       cssClass: 'cards-alert',
@@ -58,6 +59,7 @@ export class HomePage {
           text: 'OK',
           handler: (data) => {
             this.cambiarCard(data);
+            transac.ngOnInit()
           },
         },
       ],

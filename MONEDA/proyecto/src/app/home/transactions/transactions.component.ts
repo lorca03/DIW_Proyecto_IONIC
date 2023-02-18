@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Card from 'src/app/interfaces/card.interface';
+import { CrudService } from 'src/app/services/crud.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-transactions',
@@ -7,8 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionsComponent implements OnInit {
 
-  constructor() { }
+  public transaciones:number[] = [];
+  constructor(private crudService: CrudService,
+    private userService: UserService,) { }
 
-  ngOnInit() {}
+  async ngOnInit() {
+    (await this.crudService.getCards()).subscribe((cards) => {
+      this.transaciones = [];
+      var index=0;
+      cards.forEach((element) => {
+        if (element['email'] === this.userService.emailAuth() && index+''==localStorage.getItem('cardSelec')) {
+          this.transaciones=element['transactions'].slice(0,3);
+        }
+        index++
+      });
+      
+    });
+
+  }
+ 
 
 }

@@ -8,7 +8,7 @@
       <a href="settings"></a>
     </div>
   </div>
-  <div class="contenedorTarjeta" (click)="presentAlert()">
+  <div class="contenedorTarjeta" (click)="presentAlert(transc); ">
     <div class="tarjeta">
       <ion-grid>
         <ion-row>
@@ -22,6 +22,6 @@
       </ion-grid>
     </div>
   </div>
-  <app-transactions></app-transactions>
+  <app-transactions #transc></app-transactions>
   <app-navigation></app-navigation>
 </ion-content>

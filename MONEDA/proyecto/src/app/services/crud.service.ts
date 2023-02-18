@@ -28,7 +28,7 @@ export class CrudService {
     return collectionData(cardsRef) as Observable<Card[]>
   }
   deleteCard (card:Card) {
-    localStorage.removeItem('cardSelec')
+    localStorage.setItem('cardSelec','0')
     const cardsRef= doc(this.firestore,`cards/${card.name}.${card.email}`)
     return deleteDoc(cardsRef)
   }

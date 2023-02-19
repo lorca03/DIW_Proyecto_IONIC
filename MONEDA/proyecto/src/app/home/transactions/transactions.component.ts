@@ -24,9 +24,9 @@ export class TransactionsComponent implements OnInit {
         }
         index++
       });
-      
-    });
 
+    });
+    
   }
  
 

@@ -14,12 +14,14 @@ export class HomePage {
   public cards: Card[] = [];
   public cardSelec = 0;
   public cardsSelec: any = [];
-  public name=''
+  public name='';
   constructor(
     private crudService: CrudService,
     private userService: UserService,
     private alertController: AlertController
-  ) {}
+  ) {
+    this.ngOnInit()
+  }
   async ngOnInit() {
     this.name = this.userService.emailAuth()!;
     this.name=this.name?.substring(0, this.name.indexOf('@'))!;
@@ -31,7 +33,7 @@ export class HomePage {
         if (element['email'] === this.userService.emailAuth()) {
           this.cards.push(element);
           this.cardsSelec.push({
-            label:  this.cards[index]['name'],
+            label:  element['name'],
             type: 'radio',
             value: index,
           });
@@ -49,7 +51,6 @@ export class HomePage {
     if (data != undefined) {
       localStorage.setItem('cardSelec', data);
       this.ngOnInit();
-      
     }
   }
   async presentAlert(transac:any) {

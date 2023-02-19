@@ -9,6 +9,7 @@
     font-family: "Rubik", sans-serif;
       font-size: 20px;
       display: flex;
+      margin-bottom: 5px;
       align-items: flex-start;
       width: 268px;
       justify-content: flex-start;
@@ -21,12 +22,14 @@
       font-family: "Quicksand", sans-serif;
       color: var(--ion-color-azuloscuro);
       width: 280px;
-      font-size:16px ;
+      font-size:20px;
       ion-col {
         display: flex;
         align-items: center; 
       }
       .dinero {
+        font-size:22px;
+        color: var(--ion-color-verdeoscuro);
         justify-content: end;
       }
       .descripcion{

@@ -17,7 +17,7 @@
         </ion-row>
         <ion-row *ngIf="cards.length>0">
           <ion-col class="balance" size="6">{{cards[cardSelec]['balance']}}€</ion-col>
-          <ion-col class="balance" size="6">{{cards[cardSelec]['name']}}</ion-col>
+          <ion-col class="balance" size="6">{{cards[cardSelec]['name'] | titlecase}}</ion-col>
         </ion-row>
       </ion-grid>
     </div>

@@ -4,40 +4,19 @@
   </section>
    <ion-grid class="transaccion">
     <ion-row *ngFor="let transaction of transaciones">
-      <ion-col size="3"
-        ><img src="../../assets/imgs/netflix-n-logo-png.png" alt="pepe"
-      /></ion-col>
-      <ion-col size="6">
+      <ion-col size="3">
+        <img *ngIf="transaction>=0" src="../../../assets/icon/iconoDeposit.PNG" alt="Deposit"/>
+        <img *ngIf="transaction<0" src="../../../assets/icon/iconwith.PNG" alt="Withdrawal"/>
+      </ion-col>
+      <ion-col size="5">
         <div>
-          <span>Netflix</span><br />
-          <span class="descripcion">Subscripcion mensual</span>
+          <span *ngIf="transaction<0">Withdrawal</span>
+          <span *ngIf="transaction>=0">Deposit</span>
+          <br />
+          <!-- <span class="descripcion">Subscripcion mensual</span> -->
         </div>
       </ion-col>
-      <ion-col size="3" class="dinero">{{transaction}}€</ion-col>
+      <ion-col size="4" class="dinero">{{transaction}}€</ion-col>
     </ion-row>
-    <!-- <ion-row>
-      <ion-col size="3"
-        ><img src="../../assets/imgs/netflix-n-logo-png.png" alt="pepe"
-      /></ion-col>
-      <ion-col size="6">
-        <div>
-          <span>Netflix</span><br />
-          <span class="descripcion">Subscripcion mensual</span>
-        </div>
-      </ion-col>
-      <ion-col size="3" class="dinero">+100€</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="3"
-        ><img src="../../assets/imgs/netflix-n-logo-png.png" alt="pepe"
-      /></ion-col>
-      <ion-col size="6">
-        <div>
-          <span>Netflix</span><br />
-          <span class="descripcion">Subscripcion mensual</span>
-        </div>
-      </ion-col>
-      <ion-col size="3" class="dinero">+100€</ion-col>
-    </ion-row> -->
   </ion-grid> 
 </div>

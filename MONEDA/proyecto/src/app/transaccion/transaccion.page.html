@@ -4,7 +4,7 @@
   <div class="container">
     <label class="dinero"><span id="dinero">{{numero}}</span>€</label>
     <select name="banco" class="banco">
-      <option *ngFor="let card of cards" value="{{card['name']}}" >{{card['name']}}</option>
+      <option *ngFor="let card of cards" value="{{card['name']}}" >{{card['name'] | titlecase}}</option>
     </select>
     <div class="numeros">
       <ion-grid fixed>

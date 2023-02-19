@@ -6,9 +6,9 @@
 [Visita mi boceto figma](https://www.figma.com/file/5d6nkFyVA8etj36ndaUTuR/Cartera-Online?node-id=0%3A1&t=rvMTKw1nBbeoyJWc-1)
 ## Programas necesarios 🔧
 1. Se necesitara `npm` para iniciar el proyecto
-    * Primero vamos a la carpeta donde est ael proyecto `cd proyecto`
+    * Primero vamos a la carpeta donde esta el proyecto `cd proyecto`
     * Una vez dentro lanzamos `npm install` y se instalara todo 
-2. Para lanzar el servidor y poder ver la aplicacion lanzamos `ionic serve` o `ionic serve -l` para verlo en formato mobil
+2. Para lanzar el servidor y poder ver la aplicacion lanzamos `ionic serve` o `ionic serve -l` para verlo en formato movil
 ## Estilos 🎨 
 1. Fuentes
     * *Rubik*

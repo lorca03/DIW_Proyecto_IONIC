@@ -1,14 +1,6 @@
 <ion-content>
   <app-atras [destino]="atras"></app-atras>
-  <div class="contenedorImagen">
-    <img src="../../assets/imgs/cartera.png" alt="No hay foto de perfil" />
-    <div>
-      <label>Guillermo</label>
-      <button>
-        <ion-icon slot="icon-only" name="pencil"></ion-icon>
-      </button>
-    </div>
-  </div>
+  <app-perfil [name]="name"></app-perfil>
   <div class="contenedorsettings">
     <app-modal setting="{{ajuste}}" *ngFor="let ajuste of settings"></app-modal>
   </div>

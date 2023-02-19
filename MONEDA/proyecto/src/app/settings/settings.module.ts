@@ -8,6 +8,7 @@ import { SettingsPageRoutingModule } from './settings-routing.module';
 import { AtrasModule } from '../modulosReutilizables/atrasModule/atras.module';
 import { ModalComponent } from './modal/modal.component';
 import { SettingsPage } from './settings.page';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   imports: [
@@ -16,11 +17,10 @@ import { SettingsPage } from './settings.page';
     IonicModule,
     SettingsPageRoutingModule,
     AtrasModule,
-    
   ],
   exports:[
     ModalComponent
   ],
-  declarations: [SettingsPage , ModalComponent]
+  declarations: [SettingsPage , ModalComponent, PerfilComponent]
 })
 export class SettingsPageModule {}

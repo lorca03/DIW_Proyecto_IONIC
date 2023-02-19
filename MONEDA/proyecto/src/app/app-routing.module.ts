@@ -22,7 +22,7 @@ const routes: Routes = [
     loadChildren: () => import('./registration/registration.module').then( m => m.RegistrationPageModule)
   },
   {
-    path: 'settings',
+    path: 'settings/:name',
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   },
   {

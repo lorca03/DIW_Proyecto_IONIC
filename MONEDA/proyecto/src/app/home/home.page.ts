@@ -14,13 +14,15 @@ export class HomePage {
   public cards: Card[] = [];
   public cardSelec = 0;
   public cardsSelec: any = [];
+  public name=''
   constructor(
     private crudService: CrudService,
     private userService: UserService,
     private alertController: AlertController
   ) {}
-
   async ngOnInit() {
+    this.name = this.userService.emailAuth()!;
+    this.name=this.name?.substring(0, this.name.indexOf('@'))!;
     var index = 0;
     (await this.crudService.getCards()).subscribe((cards) => {
       this.cards = [];

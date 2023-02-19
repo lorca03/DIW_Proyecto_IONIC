@@ -25,7 +25,6 @@ export class RegistrationPage implements OnInit {
   }
 
  async onSubmit(){
-  // await this.user.controls['email']['value']
     this.UserService.register(this.user.value)
     .then(response=>{
       console.log(response);

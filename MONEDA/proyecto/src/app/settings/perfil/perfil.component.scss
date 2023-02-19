@@ -1,0 +1,27 @@
+.contenedorImagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    flex-direction: column;
+  
+    img {
+      border: 2px solid var(--ion-color-azuloscuro);
+      width: 80px;
+      height: 75px;
+      border-radius: 100%;
+    }
+    label {
+      margin-top: 10px;
+      font-size: 20px;
+      color: var(--ion-color-azuloscuro);
+      font-family: "Rubik", sans-serif;
+    }
+    button {
+      margin-left: 5px;
+      background: transparent;
+    }
+    ion-icon {
+      color: var(--ion-color-azuloscuro);
+    }
+  }

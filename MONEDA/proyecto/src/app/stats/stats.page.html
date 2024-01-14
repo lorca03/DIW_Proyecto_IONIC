@@ -2,29 +2,31 @@
   <app-atras [destino]="atras"></app-atras>
   <div class="contenedor">
     <label class="markets">Exchange rates</label>
-    <div class="mercado" *ngFor="let moneda of monedasmostrar;index as i">
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size="3" class="i-imagen">
-            <div class="imagen">
-              <img src="../../assets/imgs/paises/{{fotos[i]}}"/></div>
-            </ion-col>
-          <ion-col size="5" class="i-id">
-            <div class="id">
-              <label class="siglas">{{moneda}}</label>
-              <label>{{nombresmonedas[i]}}</label>
-            </div></ion-col>
-          <ion-col size="4" class="i-izquierda">
-            <div class="izquierda">
-              <div [ngClass]="{'indiceVerde':precios[i]<=1,'indiceRojo':precios[i]>1}">
-                <div *ngIf="precios[i]<=1;then verde else rojo"></div>
-                <ng-template #verde> <ion-icon slot="start" name="arrow-up-outline"></ion-icon></ng-template>
-                <ng-template #rojo> <ion-icon slot="start" name="arrow-down-outline"></ion-icon></ng-template>
-                <label>{{precios[i]}}</label>
-              </div>
-            </div></ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
+    <ng-container *ngFor="let moneda of monedasmostrar;index as i">
+      <div class="mercado" *ngIf="monedasmostrar[i]!==monedaSeleccionada" >
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="3" class="i-imagen">
+              <div class="imagen">
+                <img src="../../assets/imgs/paises/{{fotos[i]}}"/></div>
+              </ion-col>
+            <ion-col size="5" class="i-id">
+              <div class="id">
+                <label class="siglas">{{moneda}}</label>
+                <label>{{nombresmonedas[i]}}</label>
+              </div></ion-col>
+            <ion-col size="4" class="i-izquierda">
+              <div class="izquierda">
+                <div [ngClass]="{'indiceRojo':precios[i]<=1,'indiceVerde':precios[i]>1}">
+                  <div *ngIf="precios[i]<=1;then rojo else verde"></div>
+                  <ng-template #verde> <ion-icon slot="start" name="arrow-up-outline"></ion-icon></ng-template>
+                  <ng-template #rojo> <ion-icon slot="start" name="arrow-down-outline"></ion-icon></ng-template>
+                  <label>{{precios[i]}}</label>
+                </div>
+              </div></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ng-container>
   </div>
 </ion-content>

@@ -19,10 +19,10 @@ export class TransactionsComponent implements OnInit {
       this.transaciones = [];
       var index=0;
       cards.forEach((element) => {
-        if (element['email'] === this.userService.emailAuth() && index+''==localStorage.getItem('cardSelec')) {
+        if (element['email'] === this.userService.emailAuth() && index+''==localStorage.getItem('cardSelec.'+ this.userService.emailAuth())) {
           this.transaciones=element['transactions'].slice(0,3);
+          index++
         }
-        index++
       });
 
     });

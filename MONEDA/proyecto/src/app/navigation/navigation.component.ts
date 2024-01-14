@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CrudService } from '../services/crud.service';
 
 @Component({
   selector: 'app-navigation',
@@ -6,11 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
+  public settings:any = [];
+  public monedaSeleccionada = '';
 
-  constructor() { }
+  constructor(private crudService: CrudService,) { }
 
-  ngOnInit() {
-    
+  async ngOnInit() {
+    this.settings = await this.crudService.getSetting();
+    this.monedaSeleccionada = this.settings["Currency"];
   }
 
 }

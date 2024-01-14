@@ -14,7 +14,8 @@ export class HomePage {
   public cards: Card[] = [];
   public cardSelec = 0;
   public cardsSelec: any = [];
-  public name='';
+  public name = '';
+  public settings:any = [];
   constructor(
     private crudService: CrudService,
     private userService: UserService,
@@ -23,10 +24,11 @@ export class HomePage {
     this.ngOnInit()
   }
   async ngOnInit() {
+    this.settings = await this.crudService.getSetting();
     this.name = this.userService.emailAuth()!;
-    this.name=this.name?.substring(0, this.name.indexOf('@'))!;
+    this.name = this.settings["Name"] == "" ? this.name?.substring(0, this.name.indexOf('@'))! : this.settings["Name"];
     var index = 0;
-    (await this.crudService.getCards()).subscribe((cards) => {
+    (await this.crudService.getCards()).subscribe((cards) => {    
       this.cards = [];
       this.cardsSelec = [];
       cards.forEach((element) => {
@@ -37,19 +39,19 @@ export class HomePage {
             type: 'radio',
             value: index,
           });
+          index++;
         }
-        index++;
       });
     });
-    if (!localStorage.getItem('cardSelec')) {
-      localStorage.setItem('cardSelec', this.cardSelec + '');
+    if (!localStorage.getItem('cardSelec.'+ this.userService.emailAuth())) {
+      localStorage.setItem('cardSelec.'+ this.userService.emailAuth(), this.cardSelec + '');
     }
-    this.cardSelec = parseInt(localStorage.getItem('cardSelec')!);
+    this.cardSelec = parseInt(localStorage.getItem('cardSelec.'+ this.userService.emailAuth())!);
   }
 
   cambiarCard(data: string) {
     if (data != undefined) {
-      localStorage.setItem('cardSelec', data);
+      localStorage.setItem('cardSelec.'+ this.userService.emailAuth(), data);
       this.ngOnInit();
     }
   }

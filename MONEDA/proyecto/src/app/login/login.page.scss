@@ -44,12 +44,10 @@ ion-button {
   --background-hover: var(--ion-color-azuloscuro);
   --background-activated: var(--ion-color-azuloscuro);
   --background-focused: var(--ion-color-azuloscuro);
-
   --color: white;
-  font-family: 'Quicksand', sans-serif;
-text-transform: capitalize;
+  font-family: "Quicksand", sans-serif;
+  text-transform: capitalize;
   --border-radius: 15px;
-
   width: 140px;
   height: 50px;
 }
@@ -61,18 +59,17 @@ input {
   border: 0px;
   border-radius: 15px;
   margin-bottom: 8px;
-  
 }
 input:focus {
-    border:2px solid var(--ion-color-azuloscuro);
-    outline: 0 none;
-  }
+  border: 2px solid var(--ion-color-azuloscuro);
+  outline: 0 none;
+}
 input::-webkit-input-placeholder {
-    font-family: FontAwesome;
-    font-weight: normal;
-    overflow: visible;
-    vertical-align: top;
-    display: inline-block !important;
-    padding-left: 5px;
-    padding-top: 2px;
-  }
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+}

@@ -13,7 +13,7 @@ export class MercadosService {
     const peticion=this.http.get<String>(`https://api.frankfurter.app/currencies`)
     return peticion
   }
-  divisia(query:string){
-    return this.http.get(`https://api.frankfurter.app/latest?to=${query}`);
+  divisia(query:string, monedaSeleccionada:string){
+    return this.http.get(`https://api.frankfurter.app/latest?from=${monedaSeleccionada}&to=${query}`);
   }
 }

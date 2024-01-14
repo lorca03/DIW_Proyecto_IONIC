@@ -54,7 +54,6 @@ export class TransaccionPage implements OnInit {
   transaccion() {
     var select = document.getElementsByName('banco')[0] as HTMLSelectElement;
     const tarjetaSelec = select.options[select.selectedIndex].value;
-    console.log(tarjetaSelec);
     var cantidad = document.getElementById('dinero')?.textContent;
     var transac: any = this.eleccion === 'deposit' ? cantidad : '-' + cantidad;
     this.cards.forEach((element) => {

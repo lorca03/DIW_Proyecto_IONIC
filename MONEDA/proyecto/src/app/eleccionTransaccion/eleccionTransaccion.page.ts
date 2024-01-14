@@ -17,8 +17,8 @@ export class EleccionTransaccionPage implements OnInit {
     (await this.crudService.getCards()).subscribe((cards) => {
       var index=0;
       cards.forEach((element) => {
-        if (element['email'] === this.userService.emailAuth()&&index+''==localStorage.getItem('cardSelec')) {
-          this.balance=cards[parseInt(localStorage.getItem('cardSelec')!)]['balance']
+        if (element['email'] === this.userService.emailAuth()&&index+''==localStorage.getItem('cardSelec.'+ this.userService.emailAuth())) {
+          this.balance=cards[parseInt(localStorage.getItem('cardSelec.'+ this.userService.emailAuth())!)]['balance']
         }
         index++;
       });

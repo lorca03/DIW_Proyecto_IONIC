@@ -1,9 +1,36 @@
 <div class="contenedorImagen">
   <img src="../../assets/imgs/cartera.png" alt="No hay foto de perfil" />
   <div>
-    <label>{{name|titlecase}}</label>
-    <button>
+    <button id="open-modal-name" expand="block">
+      <label>{{name|titlecase}}</label>
       <ion-icon slot="icon-only" name="pencil"></ion-icon>
     </button>
   </div>
 </div>
+<ion-modal trigger="open-modal-name" (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Name</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true"
+            >Confirm</ion-button
+          >
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item>
+        <ion-label position="stacked">Enter your name</ion-label>
+        <ion-input
+          type="text"
+          placeholder="Your name"
+          [(ngModel)]="name"
+        ></ion-input>
+      </ion-item>
+    </ion-content>
+  </ng-template>
+</ion-modal>

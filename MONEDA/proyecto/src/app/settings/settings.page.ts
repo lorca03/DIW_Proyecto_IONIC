@@ -11,7 +11,7 @@ import { UserService } from '../services/user.service';
 export class SettingsPage implements OnInit {
   public name: string = this.rutaActiva.snapshot.params['name'];
   public atras: string = 'home';
-  public settings: string[] = ['Last name', 'Password', 'Email', 'Phone'];
+  public settings: string[] = ['Lastname', 'Phone', 'Currency'];
 
   @ViewChild(IonModal) modal: IonModal | undefined;
   

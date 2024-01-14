@@ -1,12 +1,12 @@
 <div class="setting">
-  <button class="botonModal" id="open-modal{{setting}}" expand="block">
+  <button class="botonModal" id="open-modal{{setting}}" (click)="onModalDidPresent()" expand="block">
     <label>{{ setting }}</label> 
     <ion-icon slot="icon-only" name="chevron-down-outline"></ion-icon>
   </button>
 </div>
 
 <!-- <p>{{variable}}</p> -->
-<ion-modal trigger="open-modal{{setting}}" (willDismiss)="onWillDismiss($event)">
+<ion-modal trigger="open-modal{{setting}}" (willDismiss)="onWillDismiss($event)" >
   <ng-template>
     <ion-header>
       <ion-toolbar>
@@ -22,7 +22,13 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-item>
+      <ion-item *ngIf="setting === 'Currency'">
+        <ion-label position="stacked">Select your currency</ion-label>
+        <ion-select placeholder="Select currency" [(ngModel)]="variable">
+          <ion-select-option value={{currency}} *ngFor="let currency of currencys">{{currency}}</ion-select-option>
+        </ion-select>
+      </ion-item>      
+      <ion-item *ngIf="setting !== 'Currency'">
         <ion-label position="stacked">Enter your {{setting}}</ion-label>
         <ion-input
           type="text"

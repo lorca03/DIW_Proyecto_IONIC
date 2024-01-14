@@ -34,7 +34,7 @@ const routes: Routes = [
     loadChildren: () => import('./transaccion/transaccion.module').then( m => m.TransaccionPageModule)
   },
   {
-    path: 'stats',
+    path: 'stats/:monedaSeleccionada',
     loadChildren: () => import('./stats/stats.module').then( m => m.StatsPageModule)
   },
   {

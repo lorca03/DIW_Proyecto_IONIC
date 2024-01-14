@@ -9,8 +9,10 @@ import {
 deleteDoc,
 updateDoc} from '@angular/fire/firestore';
 import Card from '../interfaces/card.interface';
+import User from '../interfaces/user.interface';
 import { Observable } from 'rxjs';
 import { UserService } from './user.service';
+import { getDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +30,7 @@ export class CrudService {
     return collectionData(cardsRef) as Observable<Card[]>
   }
   deleteCard (card:Card) {
-    localStorage.setItem('cardSelec','0')
+    localStorage.setItem('cardSelec.'+ this.userService.emailAuth(),'0')
     const cardsRef= doc(this.firestore,`cards/${card.name}.${card.email}`)
     return deleteDoc(cardsRef)
   }
@@ -37,27 +39,36 @@ export class CrudService {
     return await updateDoc(cardsRef,{balance:transaccion,transactions:transacciones});
   }
 
-  // para settings despues
-  // addCard(card: Card) {
-  //   console.log(card.email);
-  //   const cardDocRef = doc(this.firestore, `cards`, card.email);
-  //   return setDoc(cardDocRef,card);
-  // }
-  // getCards(): Observable<Card[]>{
-  //   const cardsRef= collection(this.firestore,'cards')
-  //   return collectionData(cardsRef,{idField:'email'}) as Observable<Card[]>
-  // }
+  // settings
+  addUser() {
+    const cardDocRef = doc(this.firestore, `users/${this.userService.emailAuth()}`);
+    return setDoc(cardDocRef, this.userBlank());
+  }
+  userBlank() {
+    const newUser: User = {
+        Name: '',
+        Lastname: '',
+        Phone: 0,
+        Currency:'EUR',
+    };
+    return newUser;
+  }
 
-  // userBlank() {
-  //   const newUser: User = {
-  //     cards:[],
-  //     settings:{
-  //       name: '',
-  //       last: '',
-  //       phone: 0,
-  //       email: '',
-  //     }
-  //   };
-  //   return newUser;
-  // }
+  async updateSetting(settingName:string, setting:any){
+    const userRef= doc(this.firestore,`users/${this.userService.emailAuth()}`)
+    return await updateDoc(userRef,{[settingName]:setting});
+  }
+  async getSetting(){
+    const usersRef= doc(this.firestore, `users/${this.userService.emailAuth()}`);
+    const docSetting = await getDoc(usersRef);
+    return docSetting.data();
+  }
+
+  //divisas
+  getMonedaSeleccionada(){
+    const collect= collection(this.firestore, `users/${this.userService.emailAuth()}/Currency`);
+    console.log(collect);
+    
+    //return docSetting.data();
+  }
 }
